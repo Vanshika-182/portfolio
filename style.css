@@ -1,0 +1,376 @@
+/* ================================
+   Google Font
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* ================================
+   Global Styles
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0f;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   Background Glow
+================================ */
+body::before {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background: #7c3aed;
+    border-radius: 50%;
+    filter: blur(180px);
+    opacity: 0.18;
+    top: -150px;
+    left: -150px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: #2563eb;
+    border-radius: 50%;
+    filter: blur(180px);
+    opacity: 0.15;
+    bottom: -150px;
+    right: -100px;
+    z-index: -1;
+}
+
+
+/* ================================
+   Header
+================================ */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* ================================
+   Logo
+================================ */
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.logo::first-letter {
+    color: #8b5cf6;
+}
+
+
+/* ================================
+   Navigation
+================================ */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #c7c7d1;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #a78bfa;
+}
+
+
+/* Underline animation */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #8b5cf6;
+    left: 0;
+    bottom: -7px;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+
+/* ================================
+   Hero Section
+================================ */
+.hero {
+    min-height: calc(100vh - 90px);
+    padding: 60px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+
+/* ================================
+   Hero Heading
+================================ */
+.hero h1 {
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -1px;
+    max-width: 750px;
+}
+
+.hero h1 span {
+    color: #9b6cff;
+    text-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+}
+
+
+/* ================================
+   Description
+================================ */
+.hero p {
+    margin-top: 25px;
+    max-width: 600px;
+    color: #a9a9b4;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* ================================
+   Buttons
+================================ */
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid #8b5cf6;
+    background: #8b5cf6;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    background: transparent;
+    color: #a78bfa;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.45);
+}
+
+
+/* ================================
+   Profile Image
+================================ */
+.profile {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 350px;
+    height: 350px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+
+    border: 4px solid #8b5cf6;
+
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.5),
+        0 0 50px rgba(139, 92, 246, 0.25);
+
+    transition: 0.4s ease;
+}
+
+
+/* Image hover effect */
+.profile:hover {
+    transform: translateY(-50%) scale(1.05);
+
+    box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.7),
+        0 0 70px rgba(139, 92, 246, 0.35);
+}
+
+
+/* ================================
+   Footer
+================================ */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777783;
+    font-size: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* ================================
+   Responsive Design
+================================ */
+@media (max-width: 1000px) {
+
+    header {
+        padding: 22px 5%;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero {
+        padding: 50px 5%;
+    }
+
+    .profile {
+        width: 280px;
+        height: 280px;
+        right: 5%;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+        max-width: 600px;
+    }
+}
+
+
+/* ================================
+   Mobile
+================================ */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 50px 7%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .profile {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+
+        width: 250px;
+        height: 250px;
+
+        margin-top: 50px;
+        order: 5;
+    }
+
+    .profile:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+/* ================================
+   Small Mobile
+================================ */
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 11px 22px;
+        font-size: 14px;
+    }
+
+    .profile {
+        width: 210px;
+        height: 210px;
+    }
+}

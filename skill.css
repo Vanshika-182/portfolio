@@ -1,0 +1,275 @@
+
+/* ================================
+   Google Font
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* ================================
+   Global Styles
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0f;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   Background Glow
+================================ */
+body::before {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background: #7c3aed;
+    border-radius: 50%;
+    filter: blur(180px);
+    opacity: 0.18;
+    top: -150px;
+    left: -150px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: #2563eb;
+    border-radius: 50%;
+    filter: blur(180px);
+    opacity: 0.15;
+    bottom: -150px;
+    right: -100px;
+    z-index: -1;
+}
+
+
+/* ================================
+   Logo
+================================ */
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 25px;
+    left: 8%;
+}
+
+.logo::first-letter {
+    color: #8b5cf6;
+}
+
+
+/* ================================
+   Navigation
+================================ */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 25px 8%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #c7c7d1;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #a78bfa;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #8b5cf6;
+    left: 0;
+    bottom: -7px;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+
+/* ================================
+   Heading
+================================ */
+body > h1 {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 80px;
+    margin-bottom: 45px;
+    font-weight: 600;
+}
+
+body > h1 u {
+    text-decoration-color: #8b5cf6;
+    text-underline-offset: 10px;
+    
+}
+.skill{
+  text-align: center;
+}
+
+/* ================================
+   Skill Cards
+================================ */
+.cards {
+    display: none;
+}
+
+.card {
+    width: 260px;
+    min-height: 150px;
+    padding: 30px 25px;
+    margin: 15px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    border-radius: 18px;
+
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #8b5cf6;
+    box-shadow:
+        0 0 25px rgba(139, 92, 246, 0.25),
+        0 0 50px rgba(139, 92, 246, 0.12);
+}
+
+.card h2 {
+    color: #a78bfa;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #a9a9b4;
+    font-size: 14px;
+}
+
+
+/* ================================
+   Footer
+================================ */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: #777783;
+    font-size: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 1000px) {
+
+    .logo {
+        left: 5%;
+    }
+
+    .navbar {
+        padding: 22px 5%;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .card {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .navbar {
+        justify-content: center;
+        padding: 20px 5%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    body > h1 {
+        font-size: 38px;
+        margin-top: 45px;
+    }
+
+    .card {
+        width: 80%;
+        margin: 10px auto;
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 13px;
+    }
+
+    body > h1 {
+        font-size: 32px;
+    }
+
+    .card {
+        width: 88%;
+    }
+}
+
